@@ -1,4 +1,4 @@
-console.log("Up and running!");
+//console.log("Up and running!");
 
 
 const cards = [
@@ -45,11 +45,11 @@ function createBoard()
 function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 
- 	alert("You found a match!");
-	} 
-		else {
-		  alert("Sorry, try again.");
-		}
+		 	alert("You found a match!");
+			} 
+				else {
+				  alert("Sorry, try again.");
+				}
 
 	};
 
@@ -57,14 +57,17 @@ function checkForMatch() {
 
 function flipCard() 
 	{	
-		
-	this.getAttribute('data-id'[cardId]);
-		document.querySelector('.game-board').addEventListener('click', flipCard)		
+		let cardId = this.getAttribute('data-id');
+
+		//document.querySelector('.game-board').addEventListener('click', flipCard)		
 	
-	console.log("User flipped "+ cards[cardId].rank);
+		console.log("User flipped "+ cards[cardId].rank);
 
-	cards.cardsInPlay.push(cards[cardId].rank);
+		cardsInPlay.push(cards[cardId].rank);
 
+		this.setAttribute('src', cards[cardId].cardImage);
+
+		checkForMatch();
 
 	console.log(cards[cardId].cardImage);
 	console.log(cards[cardId].suit);
